@@ -26,6 +26,10 @@ const SkillsContainer = styled.div`
   grid-column-gap: 4rem;
   padding-right: 20%;
   padding-left: 20%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const SkillItem = styled.div`

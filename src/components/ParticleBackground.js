@@ -10,7 +10,6 @@ const ParticleBackground = () => {
     }, []);
 
     const particlesLoaded = useCallback(async container => {
-        await console.log(container, "yo");
     }, []);
     return (
         <Particles  id="tsparticles" init={particlesInit} loaded={particlesLoaded}  options={particlesConfig}></Particles>

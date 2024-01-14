@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import homeImg from "../images/final.jpeg";
+import homeImg from "../images/Personal.png";
 import Typewriter from "typewriter-effect";
 import { sr } from "./ScrollRevel";
 import { useEffect } from "react";
@@ -13,6 +13,23 @@ const HomeContainer = styled.div`
   padding-left: 15vw;
   padding-right: 15vw;
   position: relative;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    margin-top: 5%;
+  }
+`;
+
+const Image = styled.img`
+width: 30%; 
+border-radius: 10%; 
+z-index: 5;
+
+@media (max-width: 1024px) {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10%;
+}
 `;
 
 const HomeTextContainer = styled.div`
@@ -20,6 +37,10 @@ const HomeTextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const HomeTitle = styled.h1`
@@ -28,6 +49,11 @@ const HomeTitle = styled.h1`
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 10px;
+
+  @media (max-width: 1024px) {
+    font-size: 2.5rem;
+    text-align:left;
+  }
 `;
 
 const HomeSubtitle = styled.h2`
@@ -35,6 +61,11 @@ const HomeSubtitle = styled.h2`
   text-align: center;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+    text-align:left;
+  }
 `;
 
 const HomeButton = styled.a`
@@ -130,9 +161,8 @@ const Home = () => {
           </Link>
         </SocialMediaLinks>
       </HomeTextContainer>
-      <img
+      <Image
         src={homeImg}
-        style={{ width: "30%", borderRadius: "45px", zIndex: "5" }}
         alt="shruti_img"
         className="homeImage"
       />
