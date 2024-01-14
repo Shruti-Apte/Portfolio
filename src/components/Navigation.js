@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import logo from "../images/logo3.png";
 const Nav = styled.nav`
@@ -17,11 +17,29 @@ const Nav = styled.nav`
   padding-right: 15vw;
 `;
 
+const NavIconWrapper = styled.a`
+  height: 100%;
+  @media (max-width: 1024px) {
+    height: 80px;
+  }
+`;
+
 const NavIcon = styled.img`
   object-fit: content;
   height: 90%;
   width: auto;
 `;
+
+const BurgerIcon = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    display: block;
+    font-size: 24px;
+  }
+`;
+
 
 const NavMenu = styled.ul`
   display: flex;
@@ -29,6 +47,18 @@ const NavMenu = styled.ul`
   list-style: none;
   padding: 0px;
   justify-content: end;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin: 0;
+    display: ${(props) => (props.isOpen ? "flex" : "none")};
+  }
 `;
 
 const NavMenuItem = styled.li`
@@ -52,23 +82,36 @@ const NavLink = styled.a`
 `;
 
 const Navigation = ({activeTab, setActiveTab}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    console.log(isMenuOpen,'lol')
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuItemClick = (tab) => {
+    setActiveTab(tab);
+    setIsMenuOpen(false);
+  };
   return (
+    
     <Nav>
-      <a href='home' style={{height:"100%"}}><NavIcon src={logo}/></a>
-      <NavMenu>
-        <NavMenuItem active={activeTab==="Home"} onClick={()=> setActiveTab("Home")}>
-          <NavLink href="home">Home</NavLink>
+      <NavIconWrapper href='#home'><NavIcon src={logo}/></NavIconWrapper>
+      <BurgerIcon onClick={toggleMenu}>&#9776;</BurgerIcon>
+      <NavMenu  isOpen={isMenuOpen}>
+        <NavMenuItem active={activeTab==="Home"} onClick={()=> handleMenuItemClick("Home")}>
+          <NavLink href="#home">Home</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="About"} onClick={()=> setActiveTab("About")}>
+        <NavMenuItem active={activeTab==="About"} onClick={()=> handleMenuItemClick("About")}>
           <NavLink href="#about">About</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Work"} onClick={()=> setActiveTab("Work")}>
+        <NavMenuItem active={activeTab==="Work"} onClick={()=> handleMenuItemClick("Work")}>
           <NavLink href="#work">Work</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Skills"} onClick={()=> setActiveTab("Skills")}>
+        <NavMenuItem active={activeTab==="Skills"} onClick={()=> handleMenuItemClick("Skills")}>
           <NavLink href="#skills">Skills</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Contact"} onClick={()=> setActiveTab("Contact")}>
+        <NavMenuItem active={activeTab==="Contact"} onClick={()=> handleMenuItemClick("Contact")}>
           <NavLink href="#contact">Contact</NavLink>
         </NavMenuItem>
       </NavMenu>

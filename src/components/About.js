@@ -25,6 +25,12 @@ const AboutSubTitle = styled.h2`
   font-weight: bold;
   text-align: left;
   margin-bottom: 1rem;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    text-align: center;
+  }
+
 `;
 
 const AboutWrapper = styled.div`
@@ -32,11 +38,21 @@ const AboutWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    width: 100%
+  }
 `;
 
 const AboutText = styled.div`
   width: 50%;
   height: 100%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const AboutDesc = styled.p`
@@ -72,6 +88,12 @@ const AboutMeContainer = styled.div`
   width: 50%;
   height: 100%;
   padding-left: 10%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding-left: 0%;
+    margin-top: 10%;
+  }
 `;
 
 const AboutMeHeader = styled.div`
@@ -80,6 +102,11 @@ const AboutMeHeader = styled.div`
   align-items: center;
   margin-top: 2%;
   margin-bottom: 2%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const AboutItem = styled.div`

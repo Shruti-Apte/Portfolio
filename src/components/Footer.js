@@ -21,7 +21,7 @@ const FooterTitle = styled.span`
 
 
 const FooterText = styled.p`
-margin: 0px;
+  margin: 0px;
   margin-top: 10px;
 `;
 

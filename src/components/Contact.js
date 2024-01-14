@@ -21,6 +21,11 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: start;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    
+  }
 `;
 
 const Label = styled.label`

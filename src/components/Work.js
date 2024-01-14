@@ -25,6 +25,10 @@ const SectionTitle = styled.h2`
 const WorkContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1024px) {
+   flex-direction: column;
+  }
 `;
 
 const WorkItemsWrapper = styled.div`
@@ -35,6 +39,12 @@ const WorkItemsWrapper = styled.div`
   transition: transform 0.3s ease-in-out;
   padding-right: 15px;
   border-right: 1px solid;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    border-right: 0px;
+    border-bottom: 1px solid;
+  }
 `;
 
 const WorkItem = styled.div`
@@ -71,6 +81,10 @@ const BlogCardContainer = styled.a`
   &:hover .blog-card-content {
     transform: translateY(-10px);
   }
+
+  @media (max-width: 1024px) {
+    height: auto;
+  }
 `;
 
 const BlogCardContent = styled.div`
@@ -78,6 +92,11 @@ const BlogCardContent = styled.div`
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
   display: flex;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const BlogCardTitle = styled.h3`
@@ -98,7 +117,23 @@ const BlogCardImage = styled.img`
   &:hover {
     opacity: 1;
   }
+
+  @media (max-width: 1024px) {
+   width: 100%;
+  }
 `;
+
+const BlogCardText = styled.div`
+display: flex;
+width: 80%;
+flex-direction: column;
+padding: 1rem;
+
+@media (max-width: 1024px) {
+  width: 100%;
+  padding: 0rem;
+ }
+`
 
 const MyWorkContainer = styled.div`
   width: 100%;
@@ -107,6 +142,19 @@ const MyWorkContainer = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+     margin-top: 10%;
+  }
+`;
+
+const WorkLink = styled.a`
+ width: 50%;
+
+ @media (max-width: 1024px) {
+  width: 100%;
+}
 `;
 
 const WorkImage = styled.img`
@@ -117,6 +165,10 @@ const WorkImage = styled.img`
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media (max-width: 1024px) {
+    height: auto;
   }
 `;
 
@@ -135,24 +187,22 @@ const MyWork = () => {
     if (activeItem === "Work") {
       return (
         <MyWorkContainer>
-          <a
+          <WorkLink
             className="workImage"
             href="https://www.miru.so/"
-            style={{ width: "50%" }}
             target="_blank"
             rel="noreferrer"
           >
             <WorkImage src={workImg1} alt="" loading="lazy" decoding="async" />
-          </a>
-          <a
+          </WorkLink>
+          <WorkLink
             className="workImage"
             href="https://blog.saeloun.com/"
-            style={{ width: "50%" }}
             target="_blank"
             rel="noreferrer"
           >
             <WorkImage src={workImg2} alt="" loading="lazy" />
-          </a>
+          </WorkLink>
         </MyWorkContainer>
       );
     }
@@ -163,17 +213,12 @@ const MyWork = () => {
             <BlogCardContainer href={blog.link} target="_blank">
               <BlogCardContent className="blog-card-content">
                 <BlogCardImage src={blog.image} alt="Blog Image" />
-                <div
-                  style={{
-                    display: "flex",
-                    width: "80%",
-                    flexDirection: "column",
-                    padding: "1rem",
-                  }}
+                <BlogCardText
+                 
                 >
                   <BlogCardTitle>{blog.title}</BlogCardTitle>
-                  <BlogCardSummary>{blog.summuary}</BlogCardSummary>
-                </div>
+                  <BlogCardSummary>{blog.summary}</BlogCardSummary>
+                </BlogCardText>
               </BlogCardContent>
             </BlogCardContainer>
           );
