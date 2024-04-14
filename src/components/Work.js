@@ -142,6 +142,7 @@ const MyWorkContainer = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
+justify-content: space-evenly;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -150,7 +151,7 @@ const MyWorkContainer = styled.div`
 `;
 
 const WorkLink = styled.a`
- width: 50%;
+ width: 45%;
 
  @media (max-width: 1024px) {
   width: 100%;

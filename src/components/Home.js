@@ -16,6 +16,7 @@ const HomeContainer = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
+    justify-content: space-evenly;
     margin-top: 5%;
   }
 `;
@@ -40,32 +41,51 @@ const HomeTextContainer = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
+align-items: center;
   }
 `;
 
 const HomeTitle = styled.h1`
   font-size: 5rem;
-  text-align: center;
+  text-align: left;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 10px;
 
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    text-align:left;
+  }
+
   @media (max-width: 1024px) {
+font-size: 2rem;
+    text-align:left;
+  }
+
+  @media (max-width: 1280px) {
     font-size: 2.5rem;
     text-align:left;
   }
 `;
 
 const HomeSubtitle = styled.h2`
-  font-size: 4rem;
-  text-align: center;
+  font-size: 3.4rem;
+  text-align: left;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     font-size: 1.5rem;
-    text-align:left;
+    text-align:center;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 2.5rem;
+      }
 `;
 
 const HomeButton = styled.a`

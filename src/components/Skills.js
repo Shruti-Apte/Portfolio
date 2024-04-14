@@ -50,9 +50,9 @@ const SkillName = styled.h4`
 function Skills() {
 
   useEffect(()=>{
-    sr.reveal(".skills_text", {});
+    sr.reveal(".skills_text", { interval: 400 });
   sr.reveal(".skills_data", {});
-  sr.reveal(".skills_img", {});
+  sr.reveal(".skills_img", { delay: 200 });
   },[]);
   
   return (
@@ -61,7 +61,7 @@ function Skills() {
       <SkillsContainer>
         {skills.map((skill, index) => {
           return (
-            <SkillItem className="skills_data">
+            <SkillItem id={index} className="skills_data">
               <box-icon
                 name={skill.icon}
                 type="logo"

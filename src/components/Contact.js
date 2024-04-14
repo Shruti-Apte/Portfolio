@@ -74,7 +74,7 @@ function ContactForm() {
   useEffect(()=>{
     sr.reveal(".homeImage", { interval: 400 });
     sr.reveal("#message", {});
-    sr.reveal("#name", {delay: 500});
+    sr.reveal("#name", { delay: 500 });
     sr.reveal("#email", {});
     sr.reveal(".send", {});
   },[])
