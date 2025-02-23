@@ -1,51 +1,84 @@
+import Next from "../images/Skills/nxt.js.png";
+import ROR from "../images/Skills/ROR.png";
 export const skills = [
-    {
-        title: "HTML5",
-        icon: "html5"
-      },
-      {
-        title: "CSS3",
-        icon: "css3"
-      },
-      {
-        title: "JavaScript",
-        icon: "javascript"
-      },
-      {
-        title: "React",
-        icon: "react"
-      },
-      {
-        title: "MongoDB",
-        icon: "mongodb"
-      },
-      {
-        title: "Node.js",
-        icon: "nodejs"
-      },
-      {
-        title: "Tailwind",
-        icon: "tailwind-css"
-      },
-      {
-        title: "Bootstrap",
-        icon: "bootstrap"
-      },
-      {
-        title: "Git",
-        icon: "git"
-      },
-      {
-        title: "GitHub",
-        icon: "github"
-      },
-      {
-        title: "Java",
-        icon: "java"
-      },
-      {
-        title: "C++",
-        icon: "c-plus-plus"
-      },
-      
-  ]
+  {
+    title: "React",
+    icon: "react",
+    boxIcon: true,
+  },
+  {
+    title: "JavaScript",
+    icon: "javascript",
+    boxIcon: true,
+  },
+  {
+    title: "Next.js",
+    icon: Next,
+    boxIcon: false,
+  },
+  {
+    title: "TypeScript",
+    icon: "typescript",
+    boxIcon: true,
+  },
+  {
+    title: "Tailwind CSS",
+    icon: "tailwind-css",
+    boxIcon: true,
+  },
+  {
+    title: "HTML5",
+    icon: "html5",
+    boxIcon: true,
+  },
+  {
+    title: "CSS3",
+    icon: "css3",
+    boxIcon: true,
+  },
+  {
+    title: "Saas",
+    icon: "sass",
+    boxIcon: true,
+  },
+  {
+    title: "Bootstrap",
+    icon: "bootstrap",
+    boxIcon: true,
+  },
+  {
+    title: "Node.js",
+    icon: "nodejs",
+    boxIcon: true,
+  },
+  {
+    title: "Git",
+    icon: "git",
+    boxIcon: true,
+  },
+  {
+    title: "GitHub",
+    icon: "github",
+    boxIcon: true,
+  },
+  {
+    title: "Ruby on Rails",
+    icon: ROR,
+    boxIcon: false, 
+  },
+  {
+    title: "MongoDB",
+    icon: "mongodb",
+    boxIcon: true,
+  },
+  {
+    title: "Java",
+    icon: "java",
+    boxIcon: true,
+  },
+  {
+    title: "C++",
+    icon: "c-plus-plus",
+    boxIcon: true,
+  },
+];

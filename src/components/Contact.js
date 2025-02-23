@@ -66,7 +66,7 @@ cursor: pointer;
 }
 `;
 
-function ContactForm() {
+function ContactForm({setActiveTab}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -77,7 +77,7 @@ function ContactForm() {
     sr.reveal("#name", { delay: 500 });
     sr.reveal("#email", {});
     sr.reveal(".send", {});
-  },[])
+  },[]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

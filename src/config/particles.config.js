@@ -44,7 +44,7 @@ const particlesConfig = {
         default: "bounce",
       },
       random: false,
-      speed: 2,
+      speed: 1,
       straight: false,
     },
     number: {
@@ -55,13 +55,13 @@ const particlesConfig = {
       value: 90,
     },
     opacity: {
-      value: 0.5,
+      value: 0.4,
     },
     shape: {
       type: "circle",
     },
     size: {
-      value: { min: 1, max: 3 },
+      value: { min: 1, max: 2 },
     },
   },
   detectRetina: true,

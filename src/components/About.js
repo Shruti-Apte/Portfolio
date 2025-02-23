@@ -21,31 +21,21 @@ const AboutTitle = styled.h2`
   color: #5b34ea;
 `;
 
-const AboutSubTitle = styled.h2`
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 1rem;
-
-  @media (max-width: 1024px) {
-    width: 100%;
-    text-align: center;
-  }
-
-`;
-
 const AboutWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    width: 100%
+    width: 100%;
   }
 `;
 
 const AboutText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-items: center;
   width: 50%;
   height: 100%;
 
@@ -56,15 +46,14 @@ const AboutText = styled.div`
 `;
 
 const AboutDesc = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
   color: #fff;
 `;
 
 const AboutButton = styled.a`
   display: inline-block;
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 1rem 2rem;
   background-color: #5b34ea;
   color: #fff;
@@ -78,6 +67,10 @@ const AboutButton = styled.a`
   &:hover {
     transform: scale(1.1);
     background-color: #7354e8;
+  }
+    @media (max-width: 1024px) {
+    margin-right:auto;
+    margin-left:auto;
   }
 `;
 
@@ -126,10 +119,13 @@ const AboutItem = styled.div`
   }
 `;
 
+const AboutContent = styled.div`
+
+`;
+
 const Education = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
 `;
 
@@ -162,6 +158,7 @@ const EducationCollege = styled.div`
 
 const EducationDescription = styled.div`
   font-size: 16px;
+  margin-top: 3%;
 `;
 
 const EducationTimeLine = styled.span`
@@ -198,11 +195,11 @@ const About = ({ setActiveTab }) => {
   const [activeSection, setActiveSection] = useState("Education");
 
   useEffect(() => {
-    sr.reveal(".aboutSubtitle", {});
-    sr.reveal(".aboutDesc", {});
-    sr.reveal(".aboutButton", {});
-    sr.reveal(".educationBlock", {});
-    sr.reveal(".hobby", {});
+    sr.reveal(".aboutSubtitle", { interval: 50 });
+    sr.reveal(".aboutDesc", { interval: 50 });
+    sr.reveal(".aboutButton", { interval: 50 });
+    sr.reveal(".educationBlock", { interval: 50 });
+    sr.reveal(".hobby", { interval: 50 });
   }, []);
 
   return (
@@ -210,21 +207,32 @@ const About = ({ setActiveTab }) => {
       <AboutTitle>About</AboutTitle>
       <AboutWrapper>
         <AboutText>
-          <AboutSubTitle className="aboutSubtitle">Hello,</AboutSubTitle>
           <AboutDesc className="aboutDesc">
-            I'm a young front-end developer with a knack for creating
-            user-friendly websites. I'm also a former camp Instructor and a
-            future full stack developer. When I'm not coding,You can find me
-            camping in nature or engaging in thrilling adventure activities. I
-            love to travel and discover new places, which inspires me to be
-            creative. With a focus on continuous learning, I'm excited to
-            enhance my skills and contribute to innovative projects. Let's work
-            together to create amazing web experiences!
+            Hello, <br/>
+            I'm Shruti Apte! <br/><br/>
+            I am currently based in India and will be relocating to Wellington, NZ soon. I am also open to remote opportunities worldwide.
+            <br/>
+            <br/>
+            My frontend development journey started with my love for
+            painting and curiosity about computers. While studying BCA and MCA,
+            I found a cool way to blend my artistic interest with
+            technology-building beautiful websites with HTML and CSS. I was
+            fascinated by how a few lines of code could create interactive
+            experiences—it felt like magic! Then I
+            discovered React, which took it to the next level. Now, turning
+            static Figma designs into engaging, dynamic websites gives me a
+            sense of fulfillment. Building flawless user experiences-it's not just
+            my job, it's what I love to do!
+            <br/>
+            <br/>
+            When I’m not coding, you can find me exploring
+            new places, seeking adventures, or enjoying simple joys like
+            painting, reading, or just binging any shows online. I’ve also been a summer camp instructor,
+            which helped me build adaptability, persistence, and leadership-skills I use daily in my work life too. 
+            <br/> <br/>
+            Feel free to send me a message, let's build something awesome together!🚀
           </AboutDesc>
-          <AboutButton
-            className="aboutButton"
-            href="#contact"
-          >
+          <AboutButton className="aboutButton" href="#contact">
             Contact
           </AboutButton>
         </AboutText>
@@ -257,6 +265,7 @@ const About = ({ setActiveTab }) => {
               <span style={{ marginLeft: "6px" }}>Hobbies</span>
             </AboutItem>
           </AboutMeHeader>
+          <AboutContent id="aboutContent">
           {activeSection === "Education" ? (
             <Education>
               {education.map((log, index) => {
@@ -267,9 +276,9 @@ const About = ({ setActiveTab }) => {
                       <EducationTimeLine />
                     </div>
                     <EducationContent>
-                      <EducationTime>{log.time}</EducationTime>
-                      <EducationDegree>{log.Degree}</EducationDegree>
-                      <EducationCollege>{log.College}</EducationCollege>
+                      <EducationTime>{log.time}</EducationTime> 
+                      <div style={{display:"flex", gap: "2%"}}><EducationDegree>{log.Degree},</EducationDegree><EducationCollege>{log.College}</EducationCollege> </div>
+                      <EducationTime>{log.grade}</EducationTime>
                       <EducationDescription>
                         {log.Description}
                       </EducationDescription>
@@ -296,6 +305,7 @@ const About = ({ setActiveTab }) => {
               })}
             </Hobbies>
           )}
+          </AboutContent>
         </AboutMeContainer>
       </AboutWrapper>
     </AboutContainer>

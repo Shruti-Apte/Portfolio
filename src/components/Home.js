@@ -17,20 +17,19 @@ const HomeContainer = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
     justify-content: space-evenly;
-    margin-top: 5%;
   }
 `;
 
 const Image = styled.img`
-width: 30%; 
-border-radius: 10%; 
-z-index: 5;
-
-@media (max-width: 1024px) {
-  max-width: 50%;
-  max-height: 50%;
+  width: 30%;
   border-radius: 10%;
-}
+  z-index: 5;
+
+  @media (max-width: 1024px) {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 10%;
+  }
 `;
 
 const HomeTextContainer = styled.div`
@@ -41,7 +40,7 @@ const HomeTextContainer = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
-align-items: center;
+    align-items: center;
   }
 `;
 
@@ -50,47 +49,51 @@ const HomeTitle = styled.h1`
   text-align: left;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
-    text-align:left;
-  }
-
-  @media (max-width: 1024px) {
-font-size: 2rem;
-    text-align:left;
-  }
-
-  @media (max-width: 1280px) {
-    font-size: 2.5rem;
-    text-align:left;
-  }
-`;
-
-const HomeSubtitle = styled.h2`
-  font-size: 3.4rem;
-  text-align: left;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align:center;
+    text-align: left;
   }
 
   @media (max-width: 1024px) {
     font-size: 2rem;
+    text-align: left;
   }
 
   @media (max-width: 1280px) {
     font-size: 2.5rem;
-      }
+    text-align: left;
+  }
+`;
+
+const HomeSubtitle = styled.div`
+  font-size: 1.2rem;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 7.5%;
+  background-color: inherit;
+
+  @media (max-width: 768px) {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const HomeButton = styled.a`
   display: inline-block;
-  margin-top: 2rem;
   padding: 1rem 2rem;
   background-color: #5b34ea;
   color: #fff;
@@ -111,7 +114,7 @@ const SocialMediaLinks = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 80px;
-  margin-top: 100px;
+  margin-top: 10%;
 `;
 const Link = styled.a`
   cursor: pointer;
@@ -120,40 +123,38 @@ const Link = styled.a`
   }
 `;
 
-const Home = () => {
-
-  useEffect(()=>{
-    sr.reveal(".homeImage", { interval: 400 });
+const Home = ({setActiveTab}) => {
+  useEffect(() => {
+    sr.reveal(".homeImage", { interval: 100 });
     sr.reveal(".SocialMediaLinks", {});
-    sr.reveal(".homeButton", {delay: 500});
+    sr.reveal(".homeButton", { delay: 100 });
     sr.reveal(".hi", {});
     sr.reveal(".name", {});
-  },[]);
+  }, []);
 
   return (
     <HomeContainer id="home">
       <HomeTextContainer>
-        <HomeTitle className="hi">Hi,</HomeTitle>
-        <HomeTitle className="name">
-          I'm <span style={{ color: "#5B34EA" }}>Shruti</span>
-        </HomeTitle>
-        <HomeSubtitle>
+        <HomeTitle className="hi">
           <Typewriter
-            options={{
-              strings: [
-                "Software Developer",
-                "Adventure enthusiast",
-                "Rookie Painter",
-                "Anime Fan",
-              ],
-              autoStart: true,
-              loop: true,
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(`Hi, I'm <span style="color: #7354e8;">Shruti</span>`)
+                .callFunction(() => {
+                  document.querySelector(".Typewriter__cursor").style.display = "none";
+                })
+                .start();
             }}
           />
+        </HomeTitle>
+        <HomeSubtitle>
+          I enjoy creating awesome websites with clean design patterns and adopting to
+          the latest technologies. With over 3+ years of experience, I build engaging and
+          functional solutions that fit your needs perfectly. <br/> <br/> Let’s work together to bring your ideas to life!
         </HomeSubtitle>
         <HomeButton
-        className="homeButton"
-          href="https://drive.google.com/file/d/1pzIocclB19s1Z5WyYjSn0sgnFg2cvnF0/view?usp=drive_link"
+          className="homeButton"
+          href="https://drive.google.com/file/d/1obdQERlRWSJ_Bvd0FUUfZQ3YcD1grLPO/view?usp=sharing"
           target="_blank"
         >
           View Resume
@@ -167,9 +168,9 @@ const Home = () => {
               animate="fade-up"
               size="25px"
               className="SocialMediaLinks"
-            ></box-icon>
+            />
           </Link>
-          <Link href="https://www.linkedin.com/in/shruti-apte-40324b188/" target="_blank">
+          <Link href="https://www.linkedin.com/in/shrutiapte/" target="_blank">
             <box-icon
               name="linkedin"
               type="logo"
@@ -177,15 +178,11 @@ const Home = () => {
               animate="fade-up"
               size="25px"
               className="SocialMediaLinks"
-            ></box-icon>
+            />
           </Link>
         </SocialMediaLinks>
       </HomeTextContainer>
-      <Image
-        src={homeImg}
-        alt="shruti_img"
-        className="homeImage"
-      />
+      <Image src={homeImg} alt="shruti_img" className="homeImage" />
     </HomeContainer>
   );
 };

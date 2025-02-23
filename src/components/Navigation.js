@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import logo from "../images/logo3.png";
+import logo from "../images/logo.png";
 const Nav = styled.nav`
   position: sticky;
   top: 0;
@@ -19,14 +19,17 @@ const Nav = styled.nav`
 
 const NavIconWrapper = styled.a`
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 1024px) {
     height: 80px;
   }
 `;
 
 const NavIcon = styled.img`
-  object-fit: content;
-  height: 90%;
+  object-fit: contain;
+  height: 100%;
   width: auto;
 `;
 
@@ -85,7 +88,6 @@ const Navigation = ({activeTab, setActiveTab}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    console.log(isMenuOpen,'lol')
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -96,23 +98,29 @@ const Navigation = ({activeTab, setActiveTab}) => {
   return (
     
     <Nav>
-      <NavIconWrapper href='#home'><NavIcon src={logo}/></NavIconWrapper>
+      <NavIconWrapper href="/Portfolio"><NavIcon src={logo}/></NavIconWrapper>
       <BurgerIcon onClick={toggleMenu}>&#9776;</BurgerIcon>
       <NavMenu  isOpen={isMenuOpen}>
         <NavMenuItem active={activeTab==="Home"} onClick={()=> handleMenuItemClick("Home")}>
-          <NavLink href="#home">Home</NavLink>
-        </NavMenuItem>
-        <NavMenuItem active={activeTab==="About"} onClick={()=> handleMenuItemClick("About")}>
-          <NavLink href="#about">About</NavLink>
-        </NavMenuItem>
-        <NavMenuItem active={activeTab==="Work"} onClick={()=> handleMenuItemClick("Work")}>
-          <NavLink href="#work">Work</NavLink>
+          <NavLink href="/Portfolio">Home</NavLink>
         </NavMenuItem>
         <NavMenuItem active={activeTab==="Skills"} onClick={()=> handleMenuItemClick("Skills")}>
-          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="/Portfolio#skills">Skills</NavLink>
+        </NavMenuItem>
+        <NavMenuItem active={activeTab==="Work"} onClick={()=> handleMenuItemClick("Work")}>
+          <NavLink href="/Portfolio#work">Work</NavLink>
+        </NavMenuItem>
+        <NavMenuItem active={activeTab==="Blog"} onClick={()=> handleMenuItemClick("Blog")}>
+          <NavLink href="/Portfolio/blog">Blog</NavLink>
+        </NavMenuItem>
+        {/* <NavMenuItem active={activeTab==="Project"} onClick={()=> handleMenuItemClick("Blog")}>
+          <NavLink href="/Portfolio/project">Project</NavLink>
+        </NavMenuItem> */}
+        <NavMenuItem active={activeTab==="About"} onClick={()=> handleMenuItemClick("About")}>
+          <NavLink href="/Portfolio#about">About</NavLink>
         </NavMenuItem>
         <NavMenuItem active={activeTab==="Contact"} onClick={()=> handleMenuItemClick("Contact")}>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="/Portfolio#contact">Contact</NavLink>
         </NavMenuItem>
       </NavMenu>
     </Nav>
