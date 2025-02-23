@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.331c2f1d.css",
-    "main.js": "/Portfolio/static/js/main.386eef24.js",
-    "static/media/InvoiceList.svg": "/Portfolio/static/media/InvoiceList.8d6115f10583064326a944bde0ac5169.svg",
+    "main.css": "/Portfolio/static/css/main.6199189c.css",
+    "main.js": "/Portfolio/static/js/main.cf26b3f2.js",
     "static/media/Personal.png": "/Portfolio/static/media/Personal.058f68e98a6783432b61.png",
+    "static/media/saeloun.png": "/Portfolio/static/media/saeloun.cfc9b2eed4ea25a6fccd.png",
     "static/media/ZustandVsRedux.png": "/Portfolio/static/media/ZustandVsRedux.56df02589bf077a596d9.png",
     "static/media/lego.jpeg": "/Portfolio/static/media/lego.c3813ef8a9d451e4afad.jpeg",
     "static/media/has_selector.png": "/Portfolio/static/media/has_selector.0bb1d176a432eacf8696.png",
-    "static/media/Work2.png": "/Portfolio/static/media/Work2.95e77bc3137374fa6614.png",
-    "static/media/logo3.png": "/Portfolio/static/media/logo3.5fe62878357b6fd24fae.png",
+    "static/media/blog.png": "/Portfolio/static/media/blog.95e77bc3137374fa6614.png",
+    "static/media/InvoiceList.png": "/Portfolio/static/media/InvoiceList.84c10e52be089c164d8c.png",
     "static/media/ECMAscript.png": "/Portfolio/static/media/ECMAscript.5301ed178dc1018f4743.png",
     "static/media/errorBoundary.png": "/Portfolio/static/media/errorBoundary.a5dca9729c3a0ba25c3b.png",
     "static/media/TailwindVsBootstrap.jpeg": "/Portfolio/static/media/TailwindVsBootstrap.2b25b6bfc7858bd16632.jpeg",
     "index.html": "/Portfolio/index.html",
-    "main.331c2f1d.css.map": "/Portfolio/static/css/main.331c2f1d.css.map",
-    "main.386eef24.js.map": "/Portfolio/static/js/main.386eef24.js.map"
+    "main.6199189c.css.map": "/Portfolio/static/css/main.6199189c.css.map",
+    "main.cf26b3f2.js.map": "/Portfolio/static/js/main.cf26b3f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.331c2f1d.css",
-    "static/js/main.386eef24.js"
+    "static/css/main.6199189c.css",
+    "static/js/main.cf26b3f2.js"
   ]
 }
