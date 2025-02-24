@@ -136,7 +136,7 @@ const CaseStudyMiru = () => {
                 color: "inherit",
                 cursor: "pointer",
               }}
-              href="/Portfolio"
+              href="#/"
             >
               ←
             </a>

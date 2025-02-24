@@ -137,7 +137,7 @@ const CaseStudyOther = () => {
                 color: "inherit",
                 cursor: "pointer",
               }}
-              href="/Portfolio"
+              href="#/"
             >
               ←
             </a>

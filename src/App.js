@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
@@ -18,7 +18,7 @@ import ParticleBackground from "./components/ParticleBackground";
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
   return (
-    <BrowserRouter basename="/Portfolio">
+    <HashRouter>
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <Routes>
         <Route
@@ -38,12 +38,10 @@ function App() {
         <Route path="/case-study-miru" element={<CaseStudyMiru />} />
         <Route path="/case-study-blog" element={<CaseStudyBlog />} />
         <Route path="/case-study-saeloun" element={<CaseStudySaeloun />} />
-
         <Route path="/blog" element={<Blog />} />
-        {/* <Route path="/project" element={<Project />} /> */}
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

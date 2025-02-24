@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 import logo from "../images/logo.png";
 const Nav = styled.nav`
   position: sticky;
@@ -36,13 +36,13 @@ const NavIcon = styled.img`
 const BurgerIcon = styled.div`
   display: none;
   cursor: pointer;
+  color: white;
 
   @media (max-width: 1024px) {
     display: block;
     font-size: 24px;
   }
 `;
-
 
 const NavMenu = styled.ul`
   display: flex;
@@ -84,47 +84,64 @@ const NavLink = styled.a`
   }
 `;
 
-const Navigation = ({activeTab, setActiveTab}) => {
+const Navigation = ({ activeTab, setActiveTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleMenuItemClick = (tab) => {
+  const handleMenuItemClick = (e,tab) => {
+   
     setActiveTab(tab);
     setIsMenuOpen(false);
   };
   return (
-    
     <Nav>
-      <NavIconWrapper href="/Portfolio"><NavIcon src={logo}/></NavIconWrapper>
+      <NavIconWrapper href="#/">
+        <NavIcon src={logo} />
+      </NavIconWrapper>
       <BurgerIcon onClick={toggleMenu}>&#9776;</BurgerIcon>
-      <NavMenu  isOpen={isMenuOpen}>
-        <NavMenuItem active={activeTab==="Home"} onClick={()=> handleMenuItemClick("Home")}>
-          <NavLink href="/Portfolio">Home</NavLink>
+      <NavMenu isOpen={isMenuOpen}>
+        <NavMenuItem
+          active={activeTab === "Home"}
+          onClick={(e) => handleMenuItemClick(e, "Home")}
+        >
+          <NavLink href="#/">Home</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Skills"} onClick={()=> handleMenuItemClick("Skills")}>
-          <NavLink href="/Portfolio#skills">Skills</NavLink>
+        {/* <NavMenuItem
+          active={activeTab === "Skills"}
+          onClick={(e) => handleMenuItemClick(e, "Skills")}
+        >
+          <NavLink href="/#skills">Skills</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Work"} onClick={()=> handleMenuItemClick("Work")}>
-          <NavLink href="/Portfolio#work">Work</NavLink>
-        </NavMenuItem>
-        <NavMenuItem active={activeTab==="Blog"} onClick={()=> handleMenuItemClick("Blog")}>
-          <NavLink href="/Portfolio/blog">Blog</NavLink>
-        </NavMenuItem>
-        {/* <NavMenuItem active={activeTab==="Project"} onClick={()=> handleMenuItemClick("Blog")}>
-          <NavLink href="/Portfolio/project">Project</NavLink>
+        <NavMenuItem
+          active={activeTab === "Work"}
+          onClick={(e) => handleMenuItemClick(e, "Work")}
+        >
+          <NavLink href="#work">Work</NavLink>
         </NavMenuItem> */}
-        <NavMenuItem active={activeTab==="About"} onClick={()=> handleMenuItemClick("About")}>
-          <NavLink href="/Portfolio#about">About</NavLink>
+        <NavMenuItem
+          active={activeTab === "Blog"}
+          onClick={(e) => handleMenuItemClick(e, "Blog")}
+        >
+          <NavLink href="#/blog">Blog</NavLink>
         </NavMenuItem>
-        <NavMenuItem active={activeTab==="Contact"} onClick={()=> handleMenuItemClick("Contact")}>
-          <NavLink href="/Portfolio#contact">Contact</NavLink>
+        {/* <NavMenuItem
+          active={activeTab === "About"}
+          onClick={(e) => handleMenuItemClick(e, "About")}
+        >
+          <NavLink href="#about">About</NavLink>
         </NavMenuItem>
+        <NavMenuItem
+          active={activeTab === "Contact"}
+          onClick={(e) => handleMenuItemClick(e, "Contact")}
+        >
+          <NavLink href="#/contact">Contact</NavLink>
+        </NavMenuItem> */}
       </NavMenu>
     </Nav>
   );
-}
+};
 
 export default Navigation;
