@@ -64,6 +64,11 @@ const HomeTitle = styled.h1`
   @media (max-width: 1280px) {
     font-size: 2.5rem;
     text-align: left;
+
+    @media (max-width: 1024px) {
+    font-size: 1.5rem;
+    text-align: left;
+  }
   }
 `;
 
@@ -107,6 +112,11 @@ const HomeButton = styled.a`
   &:hover {
     transform: scale(1.1);
     background-color: #7354e8;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 `;
 const SocialMediaLinks = styled.div`

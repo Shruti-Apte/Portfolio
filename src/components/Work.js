@@ -22,13 +22,13 @@ const SectionTitle = styled.h2`
   color: #5b34ea;
 `;
 
-
 const MyWorkContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -49,13 +49,13 @@ const WorkBlock = styled(motion.a)`
   border-radius: 5%;
 
   @media (max-width: 1024px) {
-  width: 100%
+    width: 100%;
   }
 `;
 
 const WorkImageContainer = styled.div`
   width: 100%;
-  height: 80%;
+  height: 75%;
   cursor: pointer;
 
   @media (max-width: 1024px) {
@@ -78,16 +78,22 @@ const WorkDesc = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 20%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  height: 25%;
   text-align: center;
   background-color: #7354e8;
   cursor: pointer;
 
   @media (max-width: 1024px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
+`;
+
+const WorkIntro = styled.p`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  margin: 1%;
 `;
 
 const WorkName = styled.span`
@@ -97,38 +103,45 @@ const WorkName = styled.span`
   &:hover {
     transform: scale(1.2);
   }
+
+  @media (max-width: 1280px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
 `;
 
-const MyWork = ({setActiveTab}) => {
+const MyWork = ({ setActiveTab }) => {
   useEffect(() => {
-    sr.reveal('#workImageLeft', {
-      origin: 'left',  
-      distance: '100%', 
-      duration: 2000,  
-      easing: 'ease-in-out',
-      reset: false 
+    sr.reveal("#workImageLeft", {
+      origin: "left",
+      distance: "100%",
+      duration: 2000,
+      easing: "ease-in-out",
+      reset: false,
     });
-    sr.reveal('#workImageRight', {
-      origin: 'right',  
-      distance: '100%', 
-      duration: 2000,  
-      easing: 'ease-in-out',
-      reset: false 
+    sr.reveal("#workImageRight", {
+      origin: "right",
+      distance: "100%",
+      duration: 2000,
+      easing: "ease-in-out",
+      reset: false,
     });
-    sr.reveal("#workDesc", {interval: 100 });
+    sr.reveal("#workDesc", { interval: 100 });
   }, []);
 
-  
   return (
     <Section id="work">
       <SectionTitle>Work</SectionTitle>
       <MyWorkContainer>
         {work.map((workItem, index) => {
           return (
-             <WorkBlock
-             key={index}
-             index={index}
-             id={index % 2 === 0 ? "workImageLeft" : "workImageRight"}
+            <WorkBlock
+              key={index}
+              index={index}
+              id={index % 2 === 0 ? "workImageLeft" : "workImageRight"}
               className="workImage"
               href={workItem.link}
             >
@@ -142,10 +155,10 @@ const MyWork = ({setActiveTab}) => {
               </WorkImageContainer>
               <WorkDesc index={index}>
                 <WorkName id="workDesc">{workItem.name}</WorkName>
-                {workItem.description}
+                <WorkIntro>{workItem.description}</WorkIntro>
               </WorkDesc>
             </WorkBlock>
-          )
+          );
         })}
       </MyWorkContainer>
     </Section>

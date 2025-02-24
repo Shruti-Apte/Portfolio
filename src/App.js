@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
@@ -18,11 +18,11 @@ import ParticleBackground from "./components/ParticleBackground";
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
   return (
-    <Router>
+    <BrowserRouter basename="/Portfolio">
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <Routes>
         <Route
-          path="/Portfolio"
+          path="/"
           element={
             <div className="Wrapper">
               <ParticleBackground />
@@ -34,20 +34,16 @@ function App() {
             </div>
           }
         />
-
         {/* Case Study Page */}
-        <Route path="/Portfolio/case-study-miru" element={<CaseStudyMiru />} />
-        <Route path="/Portfolio/case-study-blog" element={<CaseStudyBlog />} />
-        <Route
-          path="/Portfolio/case-study-saeloun"
-          element={<CaseStudySaeloun />}
-        />
+        <Route path="/case-study-miru" element={<CaseStudyMiru />} />
+        <Route path="/case-study-blog" element={<CaseStudyBlog />} />
+        <Route path="/case-study-saeloun" element={<CaseStudySaeloun />} />
 
-        <Route path="/Portfolio/blog" element={<Blog />} />
-        {/* <Route path="/Portfolio/project" element={<Project />} /> */}
+        <Route path="/blog" element={<Blog />} />
+        {/* <Route path="/project" element={<Project />} /> */}
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 

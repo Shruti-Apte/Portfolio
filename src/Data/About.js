@@ -17,7 +17,7 @@ export const education = [
 
 export const hobbies = [
   {
-      title: "Trekking/Camping/Adventure Sports",
+      title: "Adventure Activities",
       icon: "pyramid"
     },
     {

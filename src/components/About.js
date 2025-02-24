@@ -291,7 +291,7 @@ const About = ({ setActiveTab }) => {
             <Hobbies>
               {hobbies.map((hobby, index) => {
                 return (
-                  <Hobby>
+                  <Hobby id={index}>
                     <box-icon
                       name={hobby.icon}
                       type="solid"
