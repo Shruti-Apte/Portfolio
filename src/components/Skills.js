@@ -8,6 +8,11 @@ const Section = styled.section`
   padding-right: 15vw;
   padding-top: 5vw;
   padding-bottom: 5vw;
+
+   @media (max-width: 1024px) {
+  padding-left: 7vw;
+  padding-right: 7vw;
+  }
 `;
 
 const SectionTitle = styled.h2`

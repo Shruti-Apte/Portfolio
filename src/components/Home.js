@@ -17,6 +17,9 @@ const HomeContainer = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
     justify-content: space-evenly;
+  padding-left: 7vw;
+  padding-right: 7vw;
+
   }
 `;
 
@@ -164,10 +167,10 @@ const Home = ({setActiveTab}) => {
         </HomeSubtitle>
         <HomeButton
           className="homeButton"
-          href="https://drive.google.com/file/d/1obdQERlRWSJ_Bvd0FUUfZQ3YcD1grLPO/view?usp=sharing"
+          href="#/case-study-miru"
           target="_blank"
         >
-          View Resume
+          View Case Study
         </HomeButton>
         <SocialMediaLinks className="SocialMediaLinks">
           <Link href="https://github.com/Shruti-Apte/" target="_blank">

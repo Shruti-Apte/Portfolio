@@ -25,48 +25,12 @@ const FooterText = styled.p`
   margin-top: 10px;
 `;
 
-const SocialMediaLinks = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80px;
-  margin-top: 10px;
-`;
-const Link = styled.a`
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.3);
-  }
-`;
-
 function Footer() {
   return (
     <FooterContainer>
       <FooterTitle>Shruti</FooterTitle>
-        <SocialMediaLinks className="SocialMediaLinks">
-          <Link href="https://www.instagram.com/shruti.apte/" target="_blank">
-            <box-icon
-              name="instagram"
-              type="logo"
-              color="#ffffff"
-              animate="fade-up"
-              size="25px"
-              className="SocialMediaLinks"
-            ></box-icon>
-          </Link>
-          <Link href="https://www.snapchat.com/add/shruti-apte?share_id=ATcu1fz1Fw8&locale=en-IN" target="_blank">
-            <box-icon
-              name="snapchat"
-              type="logo"
-              color="#ffffff"
-              animate="fade-up"
-              size="25px"
-              className="SocialMediaLinks"
-            ></box-icon>
-          </Link>
-        </SocialMediaLinks>
       <FooterText>
-        © 2023 | My Portfolio Website | all rights reserved
+        © 2023 | My Portfolio Website | All rights reserved
       </FooterText>
     </FooterContainer>
   );

@@ -13,6 +13,11 @@ const Section = styled.section`
   padding-bottom: 5vw;
   background-color: transparent;
   overflow-x: hidden;
+
+   @media (max-width: 1024px) {
+  padding-left: 7vw;
+  padding-right: 7vw;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -50,6 +55,7 @@ const WorkBlock = styled(motion.a)`
 
   @media (max-width: 1024px) {
     width: 100%;
+    height: 27vh;
   }
 `;
 

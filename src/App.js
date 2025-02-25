@@ -14,11 +14,13 @@ import Footer from "./components/Footer";
 import "./App.css";
 import "boxicons";
 import ParticleBackground from "./components/ParticleBackground";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
   return (
     <HashRouter>
+      <ScrollToTop/>
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <Routes>
         <Route

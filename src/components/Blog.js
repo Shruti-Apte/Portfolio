@@ -22,10 +22,15 @@ const SectionTitle = styled.h2`
   color: #5b34ea;
 `;
 
+const CardsContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap: 2rem;
+`;
+
 const BlogCardContainer = styled.a`
   width: 100%;
   height: 200px;
-  border-radius: 20px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   transition: box-shadow 0.3s ease-in-out;
@@ -43,10 +48,10 @@ const BlogCardContainer = styled.a`
 `;
 
 const BlogCardContent = styled.div`
-  padding: 1rem;
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
   display: flex;
+  height: 100%;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -54,9 +59,12 @@ const BlogCardContent = styled.div`
   }
 `;
 
-const BlogCardTitle = styled.h3`
+const BlogCardTitle = styled.span`
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  @media (max-width: 1024px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const BlogCardSummary = styled.p`
@@ -65,8 +73,8 @@ const BlogCardSummary = styled.p`
 `;
 
 const BlogCardImage = styled.img`
-  width: 20%;
-  height: auto;
+  width: 25%;
+  height: 100%;
   transition: opacity 0.3s ease-in-out;
   opacity: 0.7;
   &:hover {
@@ -80,8 +88,8 @@ const BlogCardImage = styled.img`
 
 const BlogCardText = styled.div`
   display: flex;
-  width: 80%;
   flex-direction: column;
+  justify-content: space-evenly;
   padding: 1rem;
 
   @media (max-width: 1024px) {
@@ -98,10 +106,10 @@ const Blog = () => {
   return (
     <Section id="blog">
       <SectionTitle>Blogs</SectionTitle>
-      <div style={{ width: "90%", minHeight: "50%" }}>
-        {blogData.map((blog) => {
+      <CardsContainer>
+        {blogData?.map((blog, index) => {
           return (
-            <BlogCardContainer id="card" href={blog.link} target="_blank">
+            <BlogCardContainer key={index} id="card" href={blog.link} target="_blank">
               <BlogCardContent className="blog-card-content">
                 <BlogCardImage src={blog.image} alt="Blog Image" />
                 <BlogCardText>
@@ -112,7 +120,7 @@ const Blog = () => {
             </BlogCardContainer>
           );
         })}
-      </div>
+      </CardsContainer>
     </Section>
   );
 };

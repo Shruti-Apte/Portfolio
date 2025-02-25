@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../images/logo.png";
+import { useLocation } from "react-router-dom";
+
 const Nav = styled.nav`
   position: sticky;
   top: 0;
@@ -86,6 +88,7 @@ const NavLink = styled.a`
 
 const Navigation = ({ activeTab, setActiveTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -104,7 +107,7 @@ const Navigation = ({ activeTab, setActiveTab }) => {
       <BurgerIcon onClick={toggleMenu}>&#9776;</BurgerIcon>
       <NavMenu isOpen={isMenuOpen}>
         <NavMenuItem
-          active={activeTab === "Home"}
+          active={pathname === "/" ? true : false}
           onClick={(e) => handleMenuItemClick(e, "Home")}
         >
           <NavLink href="#/">Home</NavLink>
@@ -122,7 +125,7 @@ const Navigation = ({ activeTab, setActiveTab }) => {
           <NavLink href="#work">Work</NavLink>
         </NavMenuItem> */}
         <NavMenuItem
-          active={activeTab === "Blog"}
+          active={pathname === "/blog" ? true : false}
           onClick={(e) => handleMenuItemClick(e, "Blog")}
         >
           <NavLink href="#/blog">Blog</NavLink>

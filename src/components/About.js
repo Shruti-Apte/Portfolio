@@ -12,6 +12,11 @@ const AboutContainer = styled.div`
   padding-right: 15vw;
   padding-top: 5vw;
   padding-bottom: 5vw;
+
+  @media (max-width: 1024px) {
+  padding-left: 7vw;
+  padding-right: 7vw;
+  }
 `;
 
 const AboutTitle = styled.h2`
@@ -232,8 +237,8 @@ const About = ({ setActiveTab }) => {
             <br/> <br/>
             Feel free to send me a message, let's build something awesome together!🚀
           </AboutDesc>
-          <AboutButton className="aboutButton" href="#contact">
-            Contact
+          <AboutButton className="aboutButton" href="https://drive.google.com/file/d/1obdQERlRWSJ_Bvd0FUUfZQ3YcD1grLPO/view?usp=sharing">
+            View Resume
           </AboutButton>
         </AboutText>
         <AboutMeContainer>

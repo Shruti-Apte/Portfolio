@@ -189,22 +189,23 @@ const CaseStudyMiru = () => {
         <Section>
           <Title id="caseTitle">Challenges & Solutions</Title>
           <Description>
-            • Challenge: The project lacked a mobile-first approach, leading to
+            1. <span style={{textDecoration: "underline"}}>Challenge:</span> The project lacked a mobile-first approach, leading to
             poor responsiveness and inconsistent UI across devices.
             <br />
-            • Solution: Revamped most of the project by redesigning components
+            • <span style={{color: "#7354e8"}}>Solution:</span> Revamped most of the project by redesigning components
             and implementing mobile-friendly layouts, ensuring a seamless user
             experience across all screen sizes.
             <br /> <br />
-            • Challenge: When I started on the project, it was messy and unstructured because
+            2. <span style={{textDecoration: "underline"}}>Challenge:</span> When I started on the project, it was messy and unstructured because
             many developers contributed to it.
             <br />
-            • Solution: Refactored the code, improving readability, code
+            • <span style={{color: "#7354e8"}}>Solution:</span> Refactored the code, improving readability, code
             maintainability, and the overall performance.
             <br /> <br />
-            • Challenge: The lack of a stable backend team meant working with
+            3. <span style={{textDecoration: "underline"}}>Challenge:</span> The lack of a stable backend team meant working with
             different developers for various features, causing integration challenges
-            and delays. <br />• Solution: Maintained clear communication,
+            and delays. <br />
+            • <span style={{color: "#7354e8"}}>Solution:</span> Maintained clear communication,
             adaptability, and teamwork, quickly aligning with new team members
             to ensure seamless CI/CD.
           </Description>

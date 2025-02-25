@@ -6,6 +6,11 @@ import emailjs from '@emailjs/browser';
 const Section = styled.section`
   padding-top: 15vh;
   padding-bottom: 15vh ;
+
+   @media (max-width: 1024px) {
+  padding-left: 7vw;
+  padding-right: 7vw;
+  }
 `;
 
 const SectionTitle = styled.h2`

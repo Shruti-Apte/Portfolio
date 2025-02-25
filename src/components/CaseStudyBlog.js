@@ -178,17 +178,17 @@ const CaseStudyOther = () => {
         <Section>
           <Title id="caseTitle">Challenges & Solutions</Title>
           <Description>
-          • Challenge: Working with a niche technology stack (Jekyll and
+          1.<span style={{textDecoration: "underline"}}>Challenge: </span>Working with a niche technology stack (Jekyll and
             Liquid), which presented challenges due to limited documentation,
             smaller developer community, and difficulties in debugging.
-            <br />• Solution: Diligently studied the documentation, quickly
+            <br />• <span style={{color: "#7354e8"}}>Solution:</span> Diligently studied the documentation, quickly
             mastered the core syntax, and built a good grasp through hands-on
             problem-solving, ultimately overcoming the learning curve and
             debugging issues.<br /> <br />
-            • Challenge: The project had poor responsiveness and inconsistencies
+            2.<span style={{textDecoration: "underline"}}>Challenge: </span> The project had poor responsiveness and inconsistencies
             in the user interface across different devices.
             <br />
-            • Solution: Addressed the responsiveness issues by refining and
+            • <span style={{color: "#7354e8"}}>Solution:</span> Addressed the responsiveness issues by refining and
             optimizing the existing media queries.            
           </Description>
         </Section>

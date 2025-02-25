@@ -196,31 +196,31 @@ const CaseStudySaeloun = () => {
         <Section>
           <Title id="caseTitle">Challenges & Solutions</Title>
           <Description>
-            Old:
+            Old website:
             <br />
-            • Challenge: Started working on an existing Next.js project with
+            1.<span style={{textDecoration: "underline"}}>Challenge:</span> Started working on an existing Next.js project with
             only foundational knowledge of Next.js and no hands-on
             experience, making it challenging to understand the complex project
             structure.
             <br />
-            • Solution: To overcome this, I collaborated with the team members, and
+            • <span style={{color: "#7354e8"}}>Solution:</span> To overcome this, I collaborated with the team members, and
             quickly adapted to the project structure, improving the site’s
             functionality.
             <br /> <br />
-            • Challenge: I was assigned the task of improving SEO but lacked
+            2.<span style={{textDecoration: "underline"}}>Challenge:</span> I was assigned the task of improving SEO but lacked
             prior experience and the understanding of how to approach it effectively.
             <br />
-            • Solution: Quickly adopting to SEO best practices, I improved meta
+            • <span style={{color: "#7354e8"}}>Solution:</span> Quickly adopting to SEO best practices, I improved meta
             tags, optimized images, enhanced mobile responsiveness, and enhanced the
             page load speeds, which boosted the Lighthouse score from 70 to 90+.
             <br />
             <br />
-            Revamped:
+            Revamped Website:
             <br />
-            Challenge: Converting the old theme to a new one, including updates
+            1.<span style={{textDecoration: "underline"}}>Challenge:</span> Converting the old theme to a new one, including updates
             to color schemes, sizes, and spacing etc. while maintaining the
             consistency and functionality.
-            <br />• Solution: I carefully looked into each update, ensuring a
+            <br />• <span style={{color: "#7354e8"}}>Solution:</span> I carefully looked into each update, ensuring a
             smooth transition to the new theme while maintaining consistency in
             designs and functionality across the blog section.
           </Description>
@@ -228,7 +228,7 @@ const CaseStudySaeloun = () => {
         <Section>
           <Title id="caseTitle">Impact & Results </Title>
           <Description>
-            old:
+            Old website:
             <br />
             •Developed key pages, improved SEO, and optimized performance,
             resulting in faster load times and increased organic traffic.
@@ -236,7 +236,7 @@ const CaseStudySaeloun = () => {
             •Maintained and enhanced the site for two years, ensuring continuous
             improvements and a seamless user experience.
             <br />
-            Revamped:
+            Revamped website:
             <br />
             •Redevelopment of blog enhanced the aesthetic appeal and usability,
             leading to a more polished website.
