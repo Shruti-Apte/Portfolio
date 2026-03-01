@@ -21,14 +21,12 @@ import { sr } from "./ScrollRevel";
   `;
 
   const MyProjectContainer = styled.div`
-  width: 100%;
-  padding-left: 2%;
+   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 5%;
+  gap: 100px;
   align-items: center;
-  justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -37,33 +35,35 @@ import { sr } from "./ScrollRevel";
 `;
 
 const ProjectBlock = styled.a`
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
   width: 45%;
-  height: 400px;
-  border-radius: 5%;
   cursor: pointer;
   overflow: hidden;
   color: #fff;
   font-size: 1rem;
- text-decoration: none;
+  text-decoration: none;
+  border-radius: 5%;
 
   @media (max-width: 1024px) {
     width: 100%;
-    height: 200px;
+    height: 27vh;
   }
 `;
 
 const ProjectImageContainer = styled.div`
   width: 100%;
-  height: 80%;
+  height: 75%;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: height 0.4s ease-in-out;
 
-  &:hover {
-    transform: scale(1.1);
+  ${ProjectBlock}:hover & {
+    height: 60%;
   }
 
   @media (max-width: 1024px) {
-    height: auto;
+    height: 80%;
   }
 `;
 
@@ -72,22 +72,26 @@ const ProjectImage = styled.img`
   height: 100%;
   cursor: pointer;
   @media (max-width: 1024px) {
-    height: auto;
+    height: 100%;
   }
 `;
 
 const ProjectDesc = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center; 
-justify-content:center; 
-width: 100%;
-  height: 15%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
   text-align: center;
   background-color: #7354e8;
-  cursor: pointer;
+  transition: height 0.4s ease-in-out;
+  padding: 10px;
+  box-sizing: border-box;
+
+  ${ProjectBlock}:hover & {
+    height: 40%;
+  }
 `;
 
 const ProjectName = styled.span`
@@ -96,20 +100,53 @@ const ProjectName = styled.span`
  text-decoration: underline;
 `;
 
+const ProjectIntro = styled.p`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  margin: 1%;
+
+  ${ProjectBlock}:hover & {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: normal;
+  }
+  `;
+
 const Project = () => {
 
 useEffect(() => {
-  sr.reveal(".workItem", { interval: 50 });
-  sr.reveal(".workImage", { interval: 50 });
-}, []);
+    sr.reveal("#projectImageLeft", {
+      origin: "left",
+      distance: "100%",
+      duration: 2000,
+      easing: "ease-in-out",
+      reset: false,
+    });
+    sr.reveal("#projectImageRight", {
+      origin: "right",
+      distance: "100%",
+      duration: 2000,
+      easing: "ease-in-out",
+      reset: false,
+    });
+    sr.reveal("#projectDesc", { interval: 100 });
+  }, []);
 
   return (
     <Section id="project">
-      <SectionTitle>Project</SectionTitle>
-      {
+      <SectionTitle>Projects</SectionTitle>
         <MyProjectContainer>
-        {projects.map((project) => (
-          <ProjectBlock className="projectImg" href={project.link}>
+        {projects.map((project, index) => (
+          <ProjectBlock
+            key={index}
+            id={index % 2 === 0 ? "projectImageLeft" : "projectImageRight"}
+            className="projectImg"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <ProjectImageContainer>
               <ProjectImage
                 src={project.img}
@@ -119,13 +156,12 @@ useEffect(() => {
               />
             </ProjectImageContainer>
             <ProjectDesc>
-              <ProjectName>{project.name}</ProjectName>
-              {project.description}
+              <ProjectName id="projectDesc">{project.name}</ProjectName>
+              <ProjectIntro>{project.description}</ProjectIntro>
             </ProjectDesc>
           </ProjectBlock>
         ))}
       </MyProjectContainer>
-      }
     </Section>
   );
 };

@@ -1,9 +1,16 @@
 import Next from "../images/Skills/nxt.js.png";
 import ROR from "../images/Skills/ROR.png";
+import MUI from "../images/Skills/MUI.png";
+
 export const skills = [
   {
     title: "React",
     icon: "react",
+    boxIcon: true,
+  },
+  {
+    title: "Python",
+    icon: "python",
     boxIcon: true,
   },
   {
@@ -22,8 +29,8 @@ export const skills = [
     boxIcon: true,
   },
   {
-    title: "Tailwind CSS",
-    icon: "tailwind-css",
+    title: "Node.js",
+    icon: "nodejs",
     boxIcon: true,
   },
   {
@@ -37,18 +44,18 @@ export const skills = [
     boxIcon: true,
   },
   {
-    title: "Saas",
-    icon: "sass",
+    title: "Tailwind CSS",
+    icon: "tailwind-css",
     boxIcon: true,
+  },
+  {
+    title: "MUI",
+    icon: MUI,
+    boxIcon: false,
   },
   {
     title: "Bootstrap",
     icon: "bootstrap",
-    boxIcon: true,
-  },
-  {
-    title: "Node.js",
-    icon: "nodejs",
     boxIcon: true,
   },
   {
@@ -72,13 +79,8 @@ export const skills = [
     boxIcon: true,
   },
   {
-    title: "Java",
-    icon: "java",
-    boxIcon: true,
-  },
-  {
-    title: "C++",
-    icon: "c-plus-plus",
+    title: "AI Tools",
+    icon: "brain",
     boxIcon: true,
   },
 ];

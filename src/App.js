@@ -11,6 +11,7 @@ import CaseStudyBlog from "./components/CaseStudyBlog";
 import CaseStudySaeloun from "./components/CaseStudySaeloun";
 import Blog from "./components/Blog";
 import Footer from "./components/Footer";
+import Project from "./components/Project";
 import "./App.css";
 import "boxicons";
 import ParticleBackground from "./components/ParticleBackground";
@@ -31,6 +32,7 @@ function App() {
               <Home setActiveTab={setActiveTab} />
               <Skills setActiveTab={setActiveTab} />
               <Work setActiveTab={setActiveTab} />
+              <Project setActiveTab={setActiveTab} />
               <About setActiveTab={setActiveTab} />
               <ContactMe setActiveTab={setActiveTab} />
             </div>

@@ -142,8 +142,7 @@ const MyWork = ({ setActiveTab }) => {
     <Section id="work">
       <SectionTitle>Work</SectionTitle>
       <MyWorkContainer>
-        {work.map((workItem, index) => {
-          return (
+        {work.map((workItem, index) => (
             <WorkBlock
               key={index}
               index={index}
@@ -164,8 +163,7 @@ const MyWork = ({ setActiveTab }) => {
                 <WorkIntro>{workItem.description}</WorkIntro>
               </WorkDesc>
             </WorkBlock>
-          );
-        })}
+          ))}
       </MyWorkContainer>
     </Section>
   );

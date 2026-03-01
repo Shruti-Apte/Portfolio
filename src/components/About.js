@@ -215,10 +215,8 @@ const About = ({ setActiveTab }) => {
           <AboutDesc className="aboutDesc">
             Hello, <br/>
             I'm Shruti Apte! <br/><br/>
-            I am currently based in India and will be relocating to Wellington, NZ soon. I am also open to remote opportunities worldwide.
-            <br/>
-            <br/>
-            My frontend development journey started with my love for
+
+            My tech journey started with my love for
             painting and curiosity about computers. While studying BCA and MCA,
             I found a cool way to blend my artistic interest with
             technology-building beautiful websites with HTML and CSS. I was
