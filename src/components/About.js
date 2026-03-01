@@ -235,7 +235,7 @@ const About = ({ setActiveTab }) => {
             <br/> <br/>
             Feel free to send me a message, let's build something awesome together!🚀
           </AboutDesc>
-          <AboutButton className="aboutButton" href="https://drive.google.com/file/d/1obdQERlRWSJ_Bvd0FUUfZQ3YcD1grLPO/view?usp=sharing">
+          <AboutButton className="aboutButton" href="https://drive.google.com/file/d/1eFep2w0zmhaaHN6vtCigO89DEitjkMc_/view?usp=sharing" target="_blank" rel="noopener noreferrer">
             View Resume
           </AboutButton>
         </AboutText>
